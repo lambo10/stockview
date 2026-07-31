@@ -42,9 +42,9 @@ interface DemoPersona {
           <div class="space-y-4">
             <h1 class="text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
               Next-Gen <br />
-              <span class="bg-gradient-to-r from-violet-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
-                Inventory & POS Engine
-              </span>
+              <span class="bg-gradient-to-r from-violet-600/50 via-indigo-600 to-cyan-600/30 bg-clip-text text-transparent">
+              Inventory & POS Engine
+            </span>
             </h1>
             <p class="text-slate-400 text-sm lg:text-base leading-relaxed max-w-md">
               Streamline multi-store stock tracking, point of sale transactions, supplier analytics, and financial reporting in one unified dark-mode workspace.
