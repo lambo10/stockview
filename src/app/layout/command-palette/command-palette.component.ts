@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductFacadeService } from '../../facades/product.facade';
+import { ThemeService } from '../../core/services/theme.service';
 import { Product } from '../../core/models/product.model';
 
 export interface CommandItem {
@@ -91,7 +92,7 @@ export interface CommandItem {
             <div class="flex items-center space-x-3">
               <span>Press <kbd class="px-1.5 py-0.5 bg-slate-900 rounded border border-slate-800 text-slate-400">Ctrl + K</kbd> to launch anywhere</span>
             </div>
-            <span>Cuberto Wickret OS v2.0</span>
+            <span>StockView Enterprise OS</span>
           </div>
         </div>
       </div>
@@ -104,6 +105,7 @@ export class CommandPaletteComponent implements OnInit {
 
   private router = inject(Router);
   public productFacade = inject(ProductFacadeService);
+  public themeService = inject(ThemeService);
 
   query = '';
   allItems: CommandItem[] = [];
@@ -115,6 +117,14 @@ export class CommandPaletteComponent implements OnInit {
 
   buildCommands(): void {
     this.allItems = [
+      {
+        id: 'cmd-theme-toggle',
+        title: 'Toggle Light / Dark Theme',
+        subtitle: 'Switch between Obsidian Dark and Light Canvas appearance modes',
+        category: 'Action',
+        icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z',
+        action: () => this.themeService.toggleTheme()
+      },
       {
         id: 'cmd-pos',
         title: 'New Point of Sale (POS) Transaction',

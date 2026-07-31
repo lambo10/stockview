@@ -1,10 +1,11 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { NotificationDrawerComponent } from '../notification-drawer/notification-drawer.component';
 import { CommandPaletteComponent } from '../command-palette/command-palette.component';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -55,6 +56,8 @@ import { CommandPaletteComponent } from '../command-palette/command-palette.comp
   `
 })
 export class MainLayoutComponent {
+  public themeService = inject(ThemeService);
+
   isSidebarOpen = false;
   isNotificationDrawerOpen = false;
   isCommandPaletteOpen = false;

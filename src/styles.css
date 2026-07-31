@@ -17,8 +17,8 @@
 
 body {
   font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #050608 !important;
-  color: #f8fafc !important;
+  background-color: #050608;
+  color: #f8fafc;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
@@ -196,3 +196,232 @@ svg {
   vertical-align: middle;
 }
 
+/* ==========================================
+   LIGHT THEME DESIGN SYSTEM OVERRIDES
+   ========================================== */
+
+html.light body,
+.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light .wickret-bg,
+.light .wickret-bg {
+  background-color: #f8fafc !important;
+  background-image: 
+    radial-gradient(circle at 50% -10%, rgba(124, 58, 237, 0.12) 0%, rgba(248, 250, 252, 0) 65%),
+    radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, rgba(248, 250, 252, 0) 50%),
+    radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.06) 0%, rgba(248, 250, 252, 0) 50%) !important;
+}
+
+html.light .glass-panel,
+.light .glass-panel {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.light .glass-card,
+.light .glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.75) 100%) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light .glass-card:hover,
+.light .glass-card:hover {
+  border-color: rgba(124, 58, 237, 0.4) !important;
+  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.15) !important;
+}
+
+html.light .glass-input,
+.light .glass-input {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(203, 213, 225, 0.9) !important;
+  color: #0f172a !important;
+}
+
+html.light [class*="bg-[#08090c]"],
+html.light [class*="bg-[#050608]"],
+html.light .bg-slate-950,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/90,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/90,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-900\/60,
+.light [class*="bg-[#08090c]"],
+.light [class*="bg-[#050608]"],
+.light .bg-slate-950,
+.light .bg-slate-950\/80,
+.light .bg-slate-950\/90,
+.light .bg-slate-900,
+.light .bg-slate-900\/90,
+.light .bg-slate-900\/80,
+.light .bg-slate-900\/60 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+html.light .bg-slate-800,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-800\/80,
+.light .bg-slate-800,
+.light .bg-slate-800\/60,
+.light .bg-slate-800\/80 {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light .bg-slate-800\/40,
+html.light .bg-slate-900\/40,
+.light .bg-slate-800\/40,
+.light .bg-slate-900\/40 {
+  background-color: rgba(248, 250, 252, 0.85) !important;
+}
+
+html.light .hover\:bg-slate-800\/60:hover,
+html.light .hover\:bg-slate-800\/80:hover,
+html.light .hover\:bg-slate-800:hover,
+.light .hover\:bg-slate-800\/60:hover,
+.light .hover\:bg-slate-800\/80:hover,
+.light .hover\:bg-slate-800:hover {
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90,
+html.light .border-slate-700,
+html.light .border-slate-900,
+.light .border-slate-800,
+.light .border-slate-800\/80,
+.light .border-slate-800\/90,
+.light .border-slate-700,
+.light .border-slate-900 {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Base text color overrides for Light Theme */
+html.light .text-white,
+html.light .text-slate-100,
+.light .text-white,
+.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200,
+.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300,
+.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400,
+.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500,
+.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Light theme contrast boost for badge pills and accent text */
+html.light .text-violet-300,
+.light .text-violet-300 {
+  color: #6d28d9 !important;
+}
+
+html.light .text-violet-400,
+.light .text-violet-400 {
+  color: #7c3aed !important;
+}
+
+html.light .text-emerald-300,
+.light .text-emerald-300 {
+  color: #047857 !important;
+}
+
+html.light .text-cyan-300,
+.light .text-cyan-300 {
+  color: #0e7490 !important;
+}
+
+html.light .text-amber-300,
+.light .text-amber-300 {
+  color: #b45309 !important;
+}
+
+/* Table header and cell overrides for Light Theme */
+html.light table th,
+.light table th {
+  color: #475569 !important;
+  background-color: rgba(241, 245, 249, 0.95) !important;
+}
+
+html.light table td,
+.light table td {
+  color: #0f172a !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+/* Ensure solid & gradient action buttons retain vibrant colors and crisp white text in Light Theme */
+html.light .bg-emerald-600,
+html.light .bg-emerald-500,
+html.light .bg-violet-600,
+html.light .bg-indigo-600,
+html.light .bg-cyan-600,
+html.light .bg-rose-600,
+html.light .bg-amber-500,
+.light .bg-emerald-600,
+.light .bg-emerald-500,
+.light .bg-violet-600,
+.light .bg-indigo-600,
+.light .bg-cyan-600,
+.light .bg-rose-600,
+.light .bg-amber-500 {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+}
+
+html.light .bg-emerald-600 *,
+html.light .bg-emerald-500 *,
+html.light .bg-violet-600 *,
+html.light .bg-indigo-600 *,
+html.light .bg-cyan-600 *,
+html.light .bg-rose-600 *,
+html.light .bg-amber-500 *,
+.light .bg-emerald-600 *,
+.light .bg-emerald-500 *,
+.light .bg-violet-600 *,
+.light .bg-indigo-600 *,
+.light .bg-cyan-600 *,
+.light .bg-rose-600 *,
+.light .bg-amber-500 * {
+  color: #ffffff !important;
+}
+
+html.light ::-webkit-scrollbar-track,
+.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8) !important;
+}
+
+html.light ::-webkit-scrollbar-thumb,
+.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover,
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed !important;
+}
+
+html.light .bg-grid-pattern,
+.light .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}

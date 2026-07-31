@@ -2,6 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, inject } from '@angular
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService, DEFAULT_USER_AVATAR } from '../../core/services/auth.service';
+import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
   selector: 'app-profile-modal',
@@ -27,11 +28,11 @@ import { AuthService, DEFAULT_USER_AVATAR } from '../../core/services/auth.servi
               </div>
               <div>
                 <h3 class="text-lg font-black text-slate-100">User Profile Settings</h3>
-                <p class="text-xs text-slate-400">Update account profile & avatar picture</p>
+                <p class="text-xs text-slate-400">Update account profile, avatar & theme</p>
               </div>
             </div>
 
-            <button (click)="closeModal.emit()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors">
+            <button (click)="closeModal.emit()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
               </svg>
@@ -113,19 +114,53 @@ import { AuthService, DEFAULT_USER_AVATAR } from '../../core/services/auth.servi
               />
             </div>
 
+            <!-- Appearance Theme Preference Selector -->
+            <div>
+              <label class="block text-[11px] font-extrabold text-slate-400 uppercase tracking-wider mb-1.5">
+                Appearance Theme
+              </label>
+              <div class="grid grid-cols-2 gap-3">
+                <button 
+                  type="button"
+                  (click)="themeService.setTheme('dark')"
+                  [class]="themeService.isDarkMode() 
+                    ? 'flex items-center justify-center space-x-2 p-3 rounded-2xl bg-violet-600/20 border-2 border-violet-500 text-white font-bold text-xs shadow-glow-violet cursor-pointer' 
+                    : 'flex items-center justify-center space-x-2 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 font-bold text-xs hover:border-slate-700 hover:text-slate-200 transition-colors cursor-pointer'"
+                >
+                  <svg class="w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+                  </svg>
+                  <span>Dark Obsidian</span>
+                </button>
+
+                <button 
+                  type="button"
+                  (click)="themeService.setTheme('light')"
+                  [class]="!themeService.isDarkMode() 
+                    ? 'flex items-center justify-center space-x-2 p-3 rounded-2xl bg-violet-600/20 border-2 border-violet-500 text-white font-bold text-xs shadow-glow-violet cursor-pointer' 
+                    : 'flex items-center justify-center space-x-2 p-3 rounded-2xl bg-slate-900 border border-slate-800 text-slate-400 font-bold text-xs hover:border-slate-700 hover:text-slate-200 transition-colors cursor-pointer'"
+                >
+                  <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                  </svg>
+                  <span>Light Canvas</span>
+                </button>
+              </div>
+            </div>
+
             <!-- Save Action Button -->
             <div class="pt-3 border-t border-slate-800/80 flex items-center justify-end space-x-3">
               <button 
                 type="button" 
                 (click)="closeModal.emit()" 
-                class="px-5 py-2.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition-colors"
+                class="px-5 py-2.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold text-xs transition-colors cursor-pointer"
               >
                 Cancel
               </button>
               <button 
                 type="submit" 
                 [disabled]="saving"
-                class="px-6 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-bold text-xs shadow-glow-violet transition-all"
+                class="px-6 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600 via-indigo-600 to-cyan-500 hover:from-violet-500 hover:to-cyan-400 text-white font-bold text-xs shadow-glow-violet transition-all cursor-pointer"
               >
                 {{ saving ? 'Saving to Database...' : 'Save Profile Changes' }}
               </button>
@@ -141,6 +176,7 @@ export class ProfileModalComponent implements OnInit {
   @Output() closeModal = new EventEmitter<void>();
 
   public authService = inject(AuthService);
+  public themeService = inject(ThemeService);
   public readonly DEFAULT_USER_AVATAR = DEFAULT_USER_AVATAR;
 
   fullName = '';

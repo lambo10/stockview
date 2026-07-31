@@ -74,12 +74,12 @@ import { Product } from '../../core/models/product.model';
           <!-- Create Product Button -->
           <button 
             (click)="openCreateModal()" 
-            class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs shadow-glow-emerald transition-all flex items-center space-x-2"
+            class="px-5 py-2.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/50 transition-all flex items-center space-x-2 cursor-pointer border border-emerald-500/30"
           >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
             </svg>
-            <span>Add New Product</span>
+            <span class="text-white font-extrabold">+ Add New Product</span>
           </button>
         </div>
       </div>
