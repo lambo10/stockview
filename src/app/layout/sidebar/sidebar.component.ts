@@ -12,7 +12,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
     @if (isOpen) {
       <div 
         (click)="closeSidebar.emit()" 
-        class="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden transition-opacity"
+        class="fixed inset-0 z-30 bg-black/70 backdrop-blur-md md:hidden transition-opacity"
       ></div>
     }
 
@@ -20,7 +20,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
     <aside 
       [class.translate-x-0]="isOpen"
       [class.-translate-x-full]="!isOpen"
-      class="fixed inset-y-0 left-0 z-40 w-72 glass-panel border-r border-slate-800/80 transition-all duration-300 ease-in-out md:static md:translate-x-0 flex flex-col justify-between"
+      class="fixed inset-y-0 left-0 z-40 w-72 glass-panel border-r border-slate-800/90 transition-all duration-300 ease-in-out md:static md:translate-x-0 flex flex-col justify-between select-none"
     >
       <div>
         <!-- Brand Header -->
@@ -36,10 +36,10 @@ import { ProductFacadeService } from '../../facades/product.facade';
                 <h1 class="text-xl font-black text-white tracking-tight">StockView</h1>
                 <span class="px-1.5 py-0.5 text-[9px] font-extrabold text-violet-300 bg-violet-500/20 border border-violet-500/30 rounded-md">PRO</span>
               </div>
-              <span class="text-[10px] font-bold text-violet-400/90 tracking-widest uppercase block -mt-0.5">WICKRET OS v2.5</span>
+              <span class="text-[10px] font-bold text-violet-400/90 tracking-widest uppercase block -mt-0.5">Enterprise OS v3.4</span>
             </div>
           </div>
-          <button (click)="closeSidebar.emit()" class="md:hidden text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800/60 transition-colors">
+          <button (click)="closeSidebar.emit()" class="md:hidden text-slate-400 hover:text-white p-2 rounded-xl hover:bg-slate-800/60 transition-colors cursor-pointer">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
@@ -48,13 +48,13 @@ import { ProductFacadeService } from '../../facades/product.facade';
 
         <!-- Navigation Links -->
         <nav class="p-4 space-y-1.5">
-          <div class="px-3 py-2 text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">Main Navigation</div>
+          <div class="px-3 py-2 text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">Main Workspace</div>
 
           <a 
             routerLink="/dashboard" 
             routerLinkActive="bg-gradient-to-r from-violet-600/20 to-indigo-600/10 text-white border-l-4 border-violet-500 font-semibold shadow-sm shadow-violet-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-violet-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
@@ -66,7 +66,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/products" 
             routerLinkActive="bg-gradient-to-r from-violet-600/20 to-indigo-600/10 text-white border-l-4 border-violet-500 font-semibold shadow-sm shadow-violet-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center justify-between px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center justify-between px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <div class="flex items-center">
               <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-violet-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +85,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/pos" 
             routerLinkActive="bg-gradient-to-r from-emerald-600/20 to-teal-600/10 text-white border-l-4 border-emerald-500 font-semibold shadow-sm shadow-emerald-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center justify-between px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center justify-between px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <div class="flex items-center">
               <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-emerald-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +100,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/stock" 
             routerLinkActive="bg-gradient-to-r from-cyan-600/20 to-blue-600/10 text-white border-l-4 border-cyan-500 font-semibold shadow-sm shadow-cyan-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-cyan-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
@@ -112,7 +112,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/reports" 
             routerLinkActive="bg-gradient-to-r from-violet-600/20 to-indigo-600/10 text-white border-l-4 border-violet-500 font-semibold shadow-sm shadow-violet-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-violet-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
@@ -126,7 +126,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/customers" 
             routerLinkActive="bg-gradient-to-r from-violet-600/20 to-indigo-600/10 text-white border-l-4 border-violet-500 font-semibold shadow-sm shadow-violet-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-violet-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
@@ -138,7 +138,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
             routerLink="/suppliers" 
             routerLinkActive="bg-gradient-to-r from-violet-600/20 to-indigo-600/10 text-white border-l-4 border-violet-500 font-semibold shadow-sm shadow-violet-500/10" 
             (click)="closeSidebar.emit()"
-            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/50 hover:text-white rounded-xl transition-all text-sm group"
+            class="flex items-center px-3.5 py-3 text-slate-300 hover:bg-slate-800/60 hover:text-white rounded-2xl transition-all text-sm group cursor-pointer"
           >
             <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-violet-400 transition-colors shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m3 0h1m-1-4h.01M9 16h.01M9 12h.01M9 8h.01M15 16h.01M15 12h.01M15 8h.01"/>
@@ -149,7 +149,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
       </div>
 
       <!-- Footer System Status Module -->
-      <div class="p-3.5 m-3 rounded-2xl bg-slate-900/80 border border-slate-800/80 space-y-2">
+      <div class="p-3.5 m-3 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-2">
         <div class="flex items-center justify-between text-xs text-slate-400">
           <span class="font-medium">System Status</span>
           <span class="flex items-center text-emerald-400 font-semibold text-[11px]">
@@ -158,7 +158,7 @@ import { ProductFacadeService } from '../../facades/product.facade';
         </div>
         <div class="text-[11px] text-slate-500 font-mono flex items-center justify-between">
           <span>Realtime DB</span>
-          <span class="text-slate-400">Active</span>
+          <span class="text-slate-400 font-bold">Active</span>
         </div>
       </div>
     </aside>
