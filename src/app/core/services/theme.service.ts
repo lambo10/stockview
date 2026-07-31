@@ -6,7 +6,7 @@ export type ThemeMode = 'dark' | 'light';
   providedIn: 'root'
 })
 export class ThemeService {
-  private readonly THEME_KEY = 'stockview_theme';
+  private readonly THEME_KEY = 'stockview_theme_v2';
   
   public themeSignal = signal<ThemeMode>('light');
 
@@ -19,8 +19,8 @@ export class ThemeService {
     if (savedTheme === 'light' || savedTheme === 'dark') {
       this.themeSignal.set(savedTheme);
     } else {
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      this.themeSignal.set(prefersDark ? 'dark' : 'light');
+      // Default unconditionally to light theme across all pages
+      this.themeSignal.set('light');
     }
     this.applyThemeToDOM(this.themeSignal());
   }
